@@ -8,7 +8,7 @@ app = Flask(__name__)
 @app.route('/')
 def hello():
     """Greetings."""
-    return 'Hello. Thanks for viewing my first project.'
+    return 'Hello. Thanks for viewing my first project. :)'
 
 @app.route('/iris')
 def pandas_iris():
