@@ -12,7 +12,7 @@ def hello():
 
 @app.route('/iris')
 def pandas_iris():
-    df = pd.read_csv('http://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data')
+    df = pd.read_csv('https://gist.githubusercontent.com/netj/8836201/raw/6f9306ad21398ea43cba4f7d537619d0e07d5ae3/iris.csv')
     return jsonify(df.to_dict())
 
 @app.route('/html')
