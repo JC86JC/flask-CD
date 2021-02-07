@@ -1,24 +1,25 @@
 #push
 from flask import Flask
 from flask import jsonify
+import pandas as pd
 
 app = Flask(__name__)
 
 @app.route('/')
 def hello():
-    """Return a friendly HTTP greeting."""
-    return 'Hello I like to make AI Apps'
+    """Greetings."""
+    return 'Hello. Thanks for viewing my first project.'
 
-@app.route('/name/<value>')
-def name(value):
-    val = {"value": value}
-    return jsonify(val)
+@app.route('/iris')
+def pandas_iris():
+    df = pd.read_csv('http://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data')
+    return jsonify(df.to_dict())
 
 @app.route('/html')
 def html():
     """Returns some custom HTML"""
     return """
-    <title>This is a Hello World World Page</title>
+    <title>This is demo page for my first project</title>
     <p>Hello</p>
     <p><b>World</b></p>
     """
